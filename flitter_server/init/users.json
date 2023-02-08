@@ -1,0 +1,16 @@
+[{
+  "username": "elpais",
+  "email": "elpais@elpais.com",
+  "passwordHash": "$2b$10$0N8fdw6Qj/86BKForI0Gk.Eq7vbRkEDFjXSxQazDLk9u1Z943wxqu",
+  "following": ["nasa"]
+}, {
+  "username": "nasa",
+  "email": "nasa@nasa.com",
+  "passwordHash": "$2b$10$8OVHsQdGs9lzmdlZZ1EOzuLGpxYvT85Mnpm01B1NBqfKZkNNDEqPe",
+  "following": []
+}, {
+  "username": "elonmusk",
+  "email": "elonmusk@elonmusk.com",
+  "passwordHash": "$2b$10$ER0WjnyAHlCZVNCzccjR3.9Zwe9UgsIrHKo2h8sCRlm2Td2tULG6S",
+  "following": []
+}]
