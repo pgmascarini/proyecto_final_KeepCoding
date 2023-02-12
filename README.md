@@ -1,6 +1,6 @@
 # Proyecto Final Keep Coding
 
-El proyecto es una applicacion completa full stack basdo en la arquitectura MERN.
+El proyecto es una applicacion completa full stack basado en la arquitectura MERN.
 
 El proyecto es compuesto de dos modulos, cliente y servidor (front/back).
 
