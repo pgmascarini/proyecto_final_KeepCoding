@@ -67,7 +67,7 @@ const Flitters = () => {
 
     useEffect(() => {
         if (user && author) {
-            const f = user.following.find((item) => item === author);
+            const f = user?.following?.find((item) => item === author);
             if (f) {
                 setFollow(true)
             } else {

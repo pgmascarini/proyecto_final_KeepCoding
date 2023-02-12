@@ -9,6 +9,8 @@ import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
 import PageNotFound from "./pages/PageNotFound";
+import ResetPassword from './pages/ResetPassword';
+import ForgotPassword from './pages/ForgotPassword';
 
 import PublicRoute from './components/PublicRoute';
 import PrivateRoute from './components/PrivateRoute';
@@ -33,6 +35,14 @@ root.render(
             <Route path='log-in' element={
               <PublicRoute>
                 <LogIn />
+              </PublicRoute>} />
+            <Route path='forgot-password' element={
+              <PublicRoute>
+                <ForgotPassword />
+              </PublicRoute>} />
+            <Route path='reset-password/:resetPasswordCode' element={
+              <PublicRoute>
+                <ResetPassword />
               </PublicRoute>} />
             <Route path='sign-up' element={
               <PublicRoute>

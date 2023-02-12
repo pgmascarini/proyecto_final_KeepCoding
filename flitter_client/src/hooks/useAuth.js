@@ -65,7 +65,49 @@ const useAuth = () => {
         }
     }
 
-    return { authenticate, logOut, unsubscribe, updateUser };
+    const forgotPassword = async ({ email }) => {
+        try {
+            await api.post('forgot-password', { email });
+            return {
+                description: "Ha ido todo bien, te enviamos un correo electrónico con los pasos para recuperar tu contraseña",
+                type: "success"
+            };
+        } catch (error) {
+            const message = {
+                description: "Vaya, algo salió mal, inténtalo de nuevo.",
+                type: "danger"
+            }
+
+            if (error.status === 401 || error.response.status === 401) {
+                message.description = "Usuario no autorizado.";
+            }
+
+            return message;
+        }
+    }
+
+    const resetPassword = async (values, resetPasswordCode) => {
+        try {
+            const response = await api.put(`reset-password/${resetPasswordCode}`, values);
+            logIn(response.data.token);
+            return;
+        } catch (error) {
+            let message = "Vaya, algo salió mal, inténtalo de nuevo.";
+
+            if (error.status === 401 || error.response.status === 401) {
+                message = "Usuario no autorizado.";
+            }
+
+            if (error.status === 422 || error.response.status === 422) {
+                message = "Datos no rellenados correctamente.";
+            }
+
+            return message;
+        }
+
+    }
+
+    return { authenticate, logOut, unsubscribe, updateUser, forgotPassword, resetPassword };
 }
 
 export default useAuth;

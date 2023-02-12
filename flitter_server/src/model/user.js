@@ -17,6 +17,9 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    resetPasswordCode: {
+        type: String,
+    },
     following: {
         type: [String]
     }

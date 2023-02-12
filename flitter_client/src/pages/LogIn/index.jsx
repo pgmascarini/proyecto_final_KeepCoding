@@ -1,6 +1,6 @@
 import * as yup from "yup";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import useAuth from '../../hooks/useAuth';
 
@@ -69,12 +69,13 @@ const LogIn = () => {
                 <Form.Label>Contraseña</Form.Label>
                 <Form.Control type="password" name="password" maxLength={20} placeholder="********" autoComplete="true" value={values.password} onChange={handleChange} onBlur={handleBlur} isValid={touched.password && !errors.password} isInvalid={!!errors.password} />
                 <Form.Control.Feedback type="invalid">
-                  La contraseña debe contener como minimo 8 y como maximo 20 caracteres, debe incluir letras maiusculas y minusculas.
+                  La contraseña debe contener como minimo 8 y como maximo 20 caracteres, debe incluir letras maiusculas, minusculas y numeros.
                 </Form.Control.Feedback>
               </Form.Group>
               <Button variant="secondary" type="submit" disabled={!values.username || !values.password || !isValid || isSubmitting}>
                 Enviar
               </Button>
+              <Link style={{ float: "right" }} to="/forgot-password">He olvidado mi contraseña</Link>
             </Form>
           )
         }

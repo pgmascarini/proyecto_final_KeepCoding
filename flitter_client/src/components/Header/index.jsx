@@ -19,7 +19,13 @@ const Header = () => {
                             <Link className='btn btn-primary mx-2' to="/log-in">Log in</Link>
                             <Link className='btn btn-outline-secondary' to="/sign-up">Sign up</Link>
                         </> :
-                        <Link className='btn btn-outline-secondary' to="/" onClick={() => logOut()}>Log out</Link>}
+                        <>
+                            <span className='px-4'>
+                                Hola, {user.username}
+                            </span>
+                            <Link className='btn btn-outline-secondary' to="/" onClick={() => logOut()}>Log out</Link>
+                        </>
+                    }
                 </Navbar.Collapse>
             </Container>
         </Navbar >

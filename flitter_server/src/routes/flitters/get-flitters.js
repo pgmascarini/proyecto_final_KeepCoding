@@ -22,7 +22,7 @@ const getFlittersHandler = async (req, resp) => {
         Flitter.find(query)
             .skip(perPage * page)
             .limit(perPage)
-            .sort({ publicationDate: "desc", _id: 1 })
+            .sort({ publicationDate: "desc", _id: "desc" })
             .then((results) => {
                 const isLastPage = (perPage * (Number(page) + 1)) >= total;
                 return resp.status(200).json({ page, isLastPage, flitters: results });
